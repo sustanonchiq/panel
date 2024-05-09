@@ -78,10 +78,8 @@
                 <div class="table__cell">{{.Telegram}}</div>
                 <div class="table__cell">{{.Steam}}</div>
                 <div class="table__cell">
-                    <button class="btn btn_small">3mb</button>
-                    <button class="btn btn_small">
-                        <img src="assets/images/icons/trash.svg" alt="delete">
-                    </button>
+                    <a class="btn btn_small" href="/downloadlog?logname={{.LogName}}"></i> 3KB</a>
+                    <a class="btn btn_small" href="/deletelog?logname={{.LogName}}"><img src="assets/images/icons/trash.svg" alt="delete"></a>
                 </div>
             </div>
         </div>
