@@ -1,0 +1,253 @@
+:root {
+    --color-grey: rgba(118, 118, 118, 1);
+}
+
+body, html {
+    margin: 0;
+    padding: 0;
+    background-color: rgba(10, 10, 10, 1);
+}
+
+.btn {
+    display: flex;
+    gap: 15px;
+    padding: 16px;
+    height: 54px;
+    width: 350px;
+    box-sizing: border-box;
+    font-family: Cabin;
+    font-size: 24px;
+    font-weight: 400;
+    border: none;
+    border-radius: 10px;
+    text-transform: uppercase;
+    color: #fff;
+    background: linear-gradient(184.72deg, rgba(255, 0, 0, 0.45) -7.49%, rgba(255, 0, 0, 0.45) -7.48%, rgba(139, 1, 1, 0.45) 43.79%, rgba(16, 1, 1, 0.76) 97.75%);
+}
+
+.btn:hover {
+    cursor: pointer;
+}
+
+.btn_small {
+    width: max-content;
+    padding: 6px 12px;
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    background: #141313;
+    padding: 0 4.5rem;
+}
+
+
+.header__nav-list {
+    display: flex;
+    gap: 30px;
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+}
+
+.header__nav-link {
+    font-family: Cabin;
+    font-size: 24px;
+    font-weight: 500;
+    text-decoration: none;
+    color: #fff;
+}
+
+.powrotic {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    font-family: Cabin;
+    font-size: 25px;
+    font-weight: 700;
+    line-height: 40px;
+    color: #fff;
+}
+
+.powrotic__bottom {
+    color: var(--color-grey);
+}
+
+.logs {
+    display: flex;
+    justify-content: space-between;
+    width: 85vw;
+    margin: 0 auto;
+}
+
+.log {
+    width: 320px;
+    height: 120px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+    margin-top: 100px;
+    box-shadow: 0px 4px 4px 0px rgba(255, 0, 0, 0.25);
+    background: rgba(22, 21, 21, 0.4);
+}
+
+.log__title {
+    font-family: Cabin;
+    font-size: 20px;
+    font-weight: 400;
+    color: #fff;
+}
+
+.log__value {
+    font-family: Cabin;
+    font-size: 20px;
+    font-weight: 400;
+    color:var(--color-grey);
+}
+
+.buttons {
+    display: flex;
+    justify-content: center;
+    gap: 100px;
+    margin-top: 40px;
+}
+
+.table {
+    width: 92vw;
+    margin: 0 auto;
+    margin-top: 60px;
+}
+
+.table__row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    line-height: 28px;
+    padding: 0 11%;
+    margin-bottom: 10px;
+}
+
+.table__header {
+    border-bottom: 2px solid rgba(43, 45, 51, 1);
+    margin-bottom: 10px;
+}
+
+.table__header-item {
+    font-size: 20px;
+    color: #fff !important;
+    text-transform: uppercase;
+}
+
+.table__cell {
+    display: flex;
+    justify-content: center;
+    flex-shrink: 0;
+    gap: 20px;
+    width: 9.2vw;
+    text-align: center;
+    color: var(--color-grey);
+    font-family: Cabin;
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 25.2px;
+    text-align: center;
+
+}
+
+.form {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    flex-direction: column;
+}
+
+.label {
+    display: flex;
+    flex-direction: column;
+    width: 410px;
+    margin: 5px 0 0;
+    font-family: Cabin;
+    font-size: 20px;
+    font-weight: 400;
+    color: #fff;
+    text-transform: uppercase;
+}
+
+.form__input {
+    margin-top: 5px;
+}
+
+.input {
+    font-family: Cabin;
+    font-size: 20px;
+    font-weight: 700;
+    line-height: 40px;
+    border-radius: 5px;
+    border: none;
+    text-align: center;
+    color: var(--color-grey);
+    background-color: rgba(22, 22, 22, 1);
+}
+
+.input::placeholder {
+    text-transform: uppercase;
+}
+
+.input:focus {
+    outline: none;
+}
+
+.form__btn {
+    margin: 40px auto;
+    justify-content: center;
+    font-size: 32px;
+    padding: 8px 16px;
+}
+
+.charts {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 40px;
+}
+
+.charts__bottom {
+    display: flex;
+    justify-content: space-between;
+}
+
+.chart-container {
+    padding: 30px;
+    background: rgba(22, 22, 22, 0.65);
+}
+
+.chart-title {
+    font-family: Cabin;
+    font-size: 32px;
+    font-weight: 500;
+    line-height: 20px;
+    margin: 0 0 40px;
+    color: #fff;
+}
+
+.chart_main {
+    max-width: 1400px !important;
+}
+
+.chart {
+    max-width: 410px;
+    height: 410px !important;
+}
+
+.charts__bottom {
+    width: 1460px;
+    display: flex;
+    justify-content: space-between;
+    margin-top: 60px;
+}

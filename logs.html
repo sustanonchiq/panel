@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cabin:ital,wght@0,400..700;1,400..700&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <title>Logs</title>
+</head>
+<body>
+    <header class="header">
+        <img class="logotype" src="assets/images/logo/logo.svg">
+        <nav class="header__nav">
+            <ul class="header__nav-list">
+                <li class="header__nav-item"><a href="dashboard.html" class="header__nav-link">DASHBOARD</a></li>
+                <li class="header__nav-item"><a href="logs.html" class="header__nav-link">LOGS</a></li>
+                <li class="header__nav-item"><a href="builder.html" class="header__nav-link">BUILDER</a></li>
+                <li class="header__nav-item"><a href="converter.html" class="header__nav-link">COOKIES CONVERTER</a></li>
+                <li class="header__nav-item"><a href="support.html" class="header__nav-link">SUPPORT</a></li>
+            </ul>
+        </nav>
+        <div class="powrotic">
+            powrotic
+            <span class="powrotic__bottom">Expire: 31.11.2024</span>
+        </div>
+    </header>
+    
+    <main class="container">
+        <div class="logs">
+            <div class="log">
+                <h3 class="log__title">LOGS</h3>
+                <span class="log__value">10</span>
+            </div>
+            <div class="log">
+                <h3 class="log__title">PASSWORDS</h3>
+                <span class="log__value">10</span>
+            </div>
+            <div class="log">
+                <h3 class="log__title">STEAM</h3>
+                <span class="log__value">10</span>
+            </div>
+            <div class="log">
+                <h3 class="log__title">WALLETS</h3>
+                <span class="log__value">10</span>
+            </div>
+        </div>
+        <div class="buttons">
+            <button class="btn">
+                <img src="assets/images/icons/download.svg" alt="download all">
+                DOWNLOAD ALL
+            </button>
+            <button class="btn">
+                <img src="assets/images/icons/trash.svg" alt="delete all">
+                delete all
+            </button>
+        </div>
+        <div class="table">
+            <div class="table__row table__header">
+                <div class="table__cell table__header-item">LOG COUNT</div>
+                <div class="table__cell table__header-item">PASS COUNT</div>
+                <div class="table__cell table__header-item">COOKIES COUNT</div>
+                <div class="table__cell table__header-item">TAG</div>
+                <div class="table__cell table__header-item">DATE</div>
+                <div class="table__cell table__header-item">WALLETS</div>
+                <div class="table__cell table__header-item">TELEGRAM</div>
+                <div class="table__cell table__header-item">STEAM</div>
+                <div class="table__cell table__header-item"></div>
+            </div>
+            <div class="table__row">
+                <div class="table__cell">{{.LogName}}</div>
+                <div class="table__cell">{{.PassCount}}</div>
+                <div class="table__cell">{{.CookiesCount}}</div>
+                <div class="table__cell">{{.Tag}}</div>
+                <div class="table__cell">{{.DateTime}}</div>
+                <div class="table__cell">{{.Wallets}}</div>
+                <div class="table__cell">{{.Telegram}}</div>
+                <div class="table__cell">{{.Steam}}</div>
+                <div class="table__cell">
+                    <button class="btn btn_small">3mb</button>
+                    <button class="btn btn_small">
+                        <img src="assets/images/icons/trash.svg" alt="delete">
+                    </button>
+                </div>
+            </div>
+        </div>
+    </main>
+</body>
+</html>

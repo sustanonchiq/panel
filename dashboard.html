@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cabin:ital,wght@0,400..700;1,400..700&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <title>Dashboard</title>
+</head>
+<body>
+    <header class="header">
+        <img class="logotype" src="assets/images/logo/logo.svg">
+        <nav class="header__nav">
+            <ul class="header__nav-list">
+                <li class="header__nav-item"><a href="dashboard.html" class="header__nav-link">DASHBOARD</a></li>
+                <li class="header__nav-item"><a href="logs.html" class="header__nav-link">LOGS</a></li>
+                <li class="header__nav-item"><a href="builder.html" class="header__nav-link">BUILDER</a></li>
+                <li class="header__nav-item"><a href="converter.html" class="header__nav-link">COOKIES CONVERTER</a></li>
+                <li class="header__nav-item"><a href="support.html" class="header__nav-link">SUPPORT</a></li>
+            </ul>
+        </nav>
+        <div class="powrotic">
+            powrotic
+            <span class="powrotic__bottom">Expire: 31.11.2024</span>
+        </div>
+    </header>
+
+    <main class="charts">
+        <div class="chart-container">
+            <h3 class="title chart-title">Total Logs</h3>
+            <canvas class="chart chart_main" id="mainChart" width="1400" height="400"></canvas>
+        </div>
+        <div class="charts__bottom">
+            <div class="chart-container">
+                <h3 class="title chart-title">Total Wallet</h3>
+                <canvas class="chart" id="walletChart" width="410" height="410"></canvas>
+            </div>
+            <div class="chart-container">
+                <h3 class="title chart-title">Geo</h3>
+                <canvas class="chart" id="geoChart" width="410" height="410"></canvas>
+            </div>
+            <div class="chart-container">
+                <h3 class="title chart-title">Cookie</h3>
+                <canvas class="chart" id="cookieChart" width="410" height="410"></canvas>
+            </div>
+        </div>
+    </main>
+    
+
+    <script>
+        const ctx = document.getElementById('mainChart').getContext('2d');
+        const walletCtx = document.getElementById('walletChart').getContext('2d');
+        const geoCtx = document.getElementById('geoChart').getContext('2d');
+        const cookieCtx = document.getElementById('cookieChart').getContext('2d');
+
+        const mainChart = new Chart(ctx, {
+            type: 'bar',
+            data: {
+                labels: ['Янв', 'Фев', 'Мар', 'Апр', 'Май', 'Июн', 'Июл', 'Авг', 'Сен', 'Окт', 'Ноя', 'Дек', 'Янв'],
+                datasets: [{
+                    data: [12, 19, 3, 5, 2, 5, 7, 7, 3, 1, 3, 4, 2],
+                    backgroundColor: [
+                        'rgba(255, 0, 0, 0.45)',
+                        'rgba(255, 0, 0, 0.45)',
+                        'rgba(255, 0, 0, 0.45)',
+                        'rgba(255, 0, 0, 0.45)',
+                        'rgba(255, 0, 0, 0.45)',
+                        'rgba(255, 0, 0, 0.45)',
+                        'rgba(255, 0, 0, 0.45)',
+                        'rgba(255, 0, 0, 0.45)',
+                        'rgba(255, 0, 0, 0.45)',
+                        'rgba(255, 0, 0, 0.45)',
+                        'rgba(255, 0, 0, 0.45)',
+                        'rgba(255, 0, 0, 0.45)',
+                        'rgba(255, 0, 0, 0.45)',
+                    ],
+                    borderColor: [
+                        'rgba(255, 0, 0, 0.45)',
+                        'rgba(255, 0, 0, 0.45)',
+                        'rgba(255, 0, 0, 0.45)',
+                        'rgba(255, 0, 0, 0.45)',
+                        'rgba(255, 0, 0, 0.45)',
+                        'rgba(255, 0, 0, 0.45)',
+                        'rgba(255, 0, 0, 0.45)',
+                        'rgba(255, 0, 0, 0.45)',
+                        'rgba(255, 0, 0, 0.45)',
+                        'rgba(255, 0, 0, 0.45)',
+                        'rgba(255, 0, 0, 0.45)',
+                        'rgba(255, 0, 0, 0.45)',
+                        'rgba(255, 0, 0, 0.45)',
+                    ],
+                    categoryPercentage: 0.03,
+                    borderWidth: 1
+                }]
+            },
+            options: {
+                plugins: {
+                    legend: {
+                        display: false
+                    },
+                },
+                scales: {
+                    y: {
+                        beginAtZero: true,
+                        ticks: {
+                            font: {
+                                size: 20,
+                                weight: 'bold'
+                            }
+                        }
+                    },
+                    x: {
+                        ticks: {
+                            font: {
+                                size: 20,
+                                weight: 'bold'
+                            }
+                        }
+                    }
+                }
+            }
+        });
+        const walletChart = new Chart(walletCtx, {
+            type: 'bar',
+            data: {
+                labels: ['Янв', 'Фев', 'Мар', 'Апр', 'Май'],
+                datasets: [{
+                    data: [12, 19, 3, 5, 2],
+                    backgroundColor: [
+                        'rgba(255, 0, 0, 0.45)',
+                        'rgba(255, 0, 0, 0.45)',
+                        'rgba(255, 0, 0, 0.45)',
+                        'rgba(255, 0, 0, 0.45)',
+                        'rgba(255, 0, 0, 0.45)'
+                    ],
+                    borderColor: [
+                        'rgba(255, 0, 0, 0.45)',
+                        'rgba(255, 0, 0, 0.45)',
+                        'rgba(255, 0, 0, 0.45)',
+                        'rgba(255, 0, 0, 0.45)',
+                        'rgba(255, 0, 0, 0.45)'
+                    ],
+                    categoryPercentage: 0.03,
+                    borderWidth: 1
+                }]
+            },
+            options: {
+                plugins: {
+                    legend: {
+                        display: false
+                    },
+                },
+                scales: {
+                    y: {
+                        beginAtZero: true,
+                        ticks: {
+                            font: {
+                                size: 20,
+                                weight: 'bold'
+                            }
+                        }
+                    },
+                    x: {
+                        ticks: {
+                            font: {
+                                size: 20,
+                                weight: 'bold'
+                            }
+                        }
+                    }
+                }
+            }
+        });
+        const geoChart = new Chart(geoCtx, {
+            type: 'bar',
+            data: {
+                labels: ['Янв', 'Фев', 'Мар', 'Апр', 'Май'],
+                datasets: [{
+                    data: [20, 20, 20, 20, 20, 20],
+                    backgroundColor: [
+                        'rgba(255, 0, 0, 0.45)',
+                        'rgba(255, 0, 0, 0.45)',
+                        'rgba(255, 0, 0, 0.45)',
+                        'rgba(255, 0, 0, 0.45)',
+                        'rgba(255, 0, 0, 0.45)'
+                    ],
+                    borderColor: [
+                        'rgba(255, 0, 0, 0.45)',
+                        'rgba(255, 0, 0, 0.45)',
+                        'rgba(255, 0, 0, 0.45)',
+                        'rgba(255, 0, 0, 0.45)',
+                        'rgba(255, 0, 0, 0.45)'
+                    ],
+                    categoryPercentage: 0.03,
+                    borderWidth: 1
+                }]
+            },
+            options: {
+                plugins: {
+                    legend: {
+                        display: false
+                    },
+                },
+                scales: {
+                    y: {
+                        beginAtZero: true,
+                        grid: {
+                            color: 'red'
+                        },
+                        ticks: {
+                            font: {
+                                size: 20,
+                                weight: 'bold'
+                            }
+                        }
+                    },
+                    x: {
+                        ticks: {
+                            font: {
+                                size: 20,
+                                weight: 'bold'
+                            }
+                        }
+                    }
+                }
+            }
+        });
+        const cookieChart = new Chart(cookieCtx, {
+            type: 'bar',
+            data: {
+                labels: ['Янв', 'Фев', 'Мар', 'Апр', 'Май'],
+                datasets: [{
+                    data: [20, 20, 20, 20, 20, 20],
+                    backgroundColor: [
+                        'rgba(255, 0, 0, 0.45)',
+                        'rgba(255, 0, 0, 0.45)',
+                        'rgba(255, 0, 0, 0.45)',
+                        'rgba(255, 0, 0, 0.45)',
+                        'rgba(255, 0, 0, 0.45)'
+                    ],
+                    borderColor: [
+                        'rgba(255, 0, 0, 0.45)',
+                        'rgba(255, 0, 0, 0.45)',
+                        'rgba(255, 0, 0, 0.45)',
+                        'rgba(255, 0, 0, 0.45)',
+                        'rgba(255, 0, 0, 0.45)'
+                    ],
+                    categoryPercentage: 0.03,
+                    borderWidth: 1
+                }]
+            },
+            options: {
+                plugins: {
+                    legend: {
+                        display: false
+                    },
+                },
+                scales: {
+                    y: {
+                        beginAtZero: true,
+                        ticks: {
+                            font: {
+                                size: 20,
+                                weight: 'bold'
+                            }
+                        }
+                    },
+                    x: {
+                        ticks: {
+                            font: {
+                                size: 20,
+                                weight: 'bold'
+                            }
+                        }
+                    }
+                }
+            }
+        });
+   </script>
+</body>
+</html>
