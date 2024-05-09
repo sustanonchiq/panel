@@ -59,9 +59,9 @@
         const mainChart = new Chart(ctx, {
             type: 'bar',
             data: {
-                labels: ['Янв', 'Фев', 'Мар', 'Апр', 'Май', 'Июн', 'Июл', 'Авг', 'Сен', 'Окт', 'Ноя', 'Дек', 'Янв'],
+                labels:['{{.DayName1}}', '{{.DayName2}}', '{{.DayName3}}', '{{.DayName4}}', '{{.DayName5}}', '{{.DayName6}}', '{{.DayName7}}', '{{.DayName8}}', '{{.DayName9}}', '{{.DayName10}}', '{{.DayName11}}', '{{.DayName12}}'],
                 datasets: [{
-                    data: [12, 19, 3, 5, 2, 5, 7, 7, 3, 1, 3, 4, 2],
+                    data: [{{.DayLog1}}, {{.DayLog2}}, {{.DayLog3}}, {{.DayLog4}}, {{.DayLog5}}, {{.DayLog6}}, {{.DayLog7}}, {{.DayLog8}}, {{.DayLog9}}, {{.DayLog10}}, {{.DayLog11}}, {{.DayLog12}}],
                     backgroundColor: [
                         'rgba(255, 0, 0, 0.45)',
                         'rgba(255, 0, 0, 0.45)',
@@ -126,9 +126,9 @@
         const walletChart = new Chart(walletCtx, {
             type: 'bar',
             data: {
-                labels: ['Янв', 'Фев', 'Мар', 'Апр', 'Май'],
+                labels:  ['{{.MinMoth1}}', '{{.MinMoth2}}', '{{.MinMoth3}}', '{{.MinMoth4}}', '{{.MinMoth5}}'],
                 datasets: [{
-                    data: [12, 19, 3, 5, 2],
+                    data:  [{{.WalletMonth1}}, {{.WalletMonth2}}, {{.WalletMonth3}}, {{.WalletMonth4}}, {{.WalletMonth5}}],
                     backgroundColor: [
                         'rgba(255, 0, 0, 0.45)',
                         'rgba(255, 0, 0, 0.45)',
@@ -177,9 +177,9 @@
         const geoChart = new Chart(geoCtx, {
             type: 'bar',
             data: {
-                labels: ['Янв', 'Фев', 'Мар', 'Апр', 'Май'],
+                labels: ['{{.MinMoth1}}', '{{.MinMoth2}}', '{{.MinMoth3}}', '{{.MinMoth4}}', '{{.MinMoth5}}'],
                 datasets: [{
-                    data: [20, 20, 20, 20, 20, 20],
+                    data: [{{.WalletMonth1}}, {{.WalletMonth2}}, {{.WalletMonth3}}, {{.WalletMonth4}}, {{.WalletMonth5}}],
                     backgroundColor: [
                         'rgba(255, 0, 0, 0.45)',
                         'rgba(255, 0, 0, 0.45)',
@@ -228,12 +228,13 @@
                 }
             }
         });
+        
         const cookieChart = new Chart(cookieCtx, {
             type: 'bar',
             data: {
-                labels: ['Янв', 'Фев', 'Мар', 'Апр', 'Май'],
+                labels: ['{{.MinMoth1}}', '{{.MinMoth2}}', '{{.MinMoth3}}', '{{.MinMoth4}}', '{{.MinMoth5}}'],
                 datasets: [{
-                    data: [20, 20, 20, 20, 20, 20],
+                    data: [{{.CookieMonth1}}, {{.CookieMonth2}}, {{.CookieMonth3}}, {{.CookieMonth4}}, {{.CookieMonth5}}],,
                     backgroundColor: [
                         'rgba(255, 0, 0, 0.45)',
                         'rgba(255, 0, 0, 0.45)',
